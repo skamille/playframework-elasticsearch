@@ -209,7 +209,7 @@ public class ElasticSearchPlugin extends PlayPlugin {
 	}
 	
 	private static boolean isInterestingEvent(String event) {
-		return event.endsWith(".objectPersisted") || event.endsWith(".objectUpdated") || event.endsWith(".objectDeleted");
+		return event.endsWith(".objectPersisted") || event.endsWith(".objectUpdated") || event.endsWith(".objectDeleted") || event.endsWith("MORPHIA_ADDED") || event.endsWith("MORPHIA_UPDATED");
 	}
 
 	/**
