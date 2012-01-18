@@ -243,7 +243,7 @@ public class ElasticSearchPlugin extends PlayPlugin {
 
 		// Define Event
 		ElasticSearchIndexEvent event = null;
-		if (message.endsWith(".objectPersisted") || message.endsWith(".objectUpdated")) {
+		if (message.endsWith(".objectPersisted") || message.endsWith(".objectUpdated") || message.endsWith("MORPHIA_ADDED") || message.endsWith("MORPHIA_UPDATED")) {
 			// Index Model
 			event = new ElasticSearchIndexEvent((Model) context, ElasticSearchIndexEvent.Type.INDEX);
 

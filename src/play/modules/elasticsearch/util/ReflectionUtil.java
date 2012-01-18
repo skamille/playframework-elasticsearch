@@ -389,6 +389,7 @@ public abstract class ReflectionUtil {
 		Type type = field.getType();
 		Class<?> fieldClass = (Class<?>) type;
 
+		if(Modifier.isFinal(field.getModifiers())) return;
 		try {
 			if (fieldClass.equals(value.getClass())) {
 				// Types match
